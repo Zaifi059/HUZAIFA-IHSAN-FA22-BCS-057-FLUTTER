@@ -57,9 +57,9 @@
 
 ## 📫 Contact
 
-- **Email**: [huzaifaihsan059@gmail.com] *(Replace before submission)*  
-- **GitHub**: zaifi059] *(Optional)*  
-- **Software House**: URSOFT (Running)
+- **Email**: [huzaifaihsan059@gmail.com]  
+- **GitHub**: [zaifi059] 
+- **Software House**: URSOFT 
 
 ---
 
