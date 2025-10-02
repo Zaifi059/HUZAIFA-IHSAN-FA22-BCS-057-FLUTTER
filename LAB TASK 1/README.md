@@ -10,6 +10,10 @@ This is a simple Flutter application demonstrating a basic counter functionality
 - Demonstrates hot reload functionality without resetting state.
 
 ## 🧪 Screenshot
+<img width="1365" height="767" alt="image" src="https://github.com/user-attachments/assets/5f65f970-87ec-4214-91ad-8f7d28916f63" />
+
+
+<img width="1364" height="717" alt="image" src="https://github.com/user-attachments/assets/6e16d982-75c3-4a64-864e-6c408ab78f4f" />
 
 
 
