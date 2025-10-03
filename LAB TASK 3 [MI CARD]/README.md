@@ -26,6 +26,13 @@ A sleek digital business card app built with **Flutter**, showcasing professiona
 - **Profile Image:** Circular, gradient border  
 
 ---
+##   SCREEN SHOTS
+
+<img width="1365" height="767" alt="image" src="https://github.com/user-attachments/assets/6aa332b5-9d08-43d1-af4a-935d754fa1af" />
+<img width="1295" height="619" alt="image" src="https://github.com/user-attachments/assets/1ad4eb8a-afb1-4edc-a8d9-e323aa6c64a5" />
+<img width="549" height="672" alt="image" src="https://github.com/user-attachments/assets/8059d91b-f36e-4b1e-abc8-79a20a564002" />
+<img width="1365" height="767" alt="image" src="https://github.com/user-attachments/assets/4559b23f-b36e-49ff-bdc0-aa105064657a" />
+
 
 ## 🔧 Technologies Used
 
