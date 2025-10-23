@@ -23,6 +23,11 @@ Users can:
 - ✏️ **Update** existing records  
 - ❌ **Delete** records  
 - 📋 **View** all records stored locally  
+<img width="444" height="1024" alt="image" src="https://github.com/user-attachments/assets/1498dda2-2f64-4f2c-b8e8-c213db23a42f" />
+<img width="464" height="980" alt="image" src="https://github.com/user-attachments/assets/7388f6c3-91a2-44df-ad8d-c1dbdcf7e82d" />
+
+<img width="468" height="1016" alt="image" src="https://github.com/user-attachments/assets/6833c579-eff5-44c5-abea-3569e80fe69c" />
+
 
 This app demonstrates essential database operations for mobile app development using Flutter.
 
