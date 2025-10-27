@@ -1,68 +1,100 @@
-# 👨‍💼 Huzaifa Ihsan – Personal Introduction
 
-## 🧾 Basic Information
+<h1 align="center">📱 Mobile App Development (Flutter) — COMSATS University Islamabad, Vehari Campus</h1>
 
-- **Name**: Huzaifa Ihsan  
-- **Registration Number**: FA22-BCS-057  
-- **Department**: Computer Science  
-- **Institution**: COMSATS University Islamabad, Vehari Campus  
-- **Semester**: 7th  
-- **Submitted To**: Sir Abrar Sadique  
-
----
-
-## 🏢 Professional Role
-
-- **COO at URSOFT** – A growing software house focused on building digital solutions for modern businesses.
-- Overseeing operations and managing projects in both mobile and web development.
+<p align="center">
+  <b>Created and Maintained by:</b> <br>
+  <b>Huzaifa Ihsan</b> <br>
+  <b>Registration No:</b> FA22-BCS-057 <br>
+  <b>BS Computer Science — 7th Semester</b> <br>
+  <b>Instructor:</b> Sir Abrar Sadique <br>
+  <b>Course:</b> Mobile App Development (Flutter) <br>
+</p>
 
 ---
 
-## 💻 Technical Skills
+## 🧠 About This Repository
 
-| Category            | Technologies/Tools                                  |
-|---------------------|-----------------------------------------------------|
-| **Programming**     | Python, Dart, JavaScript, HTML/CSS                  |
-| **Frameworks**      | Flask (Web Development), Flutter (Cross-platform)   |
-| **UI/UX Design**    | Flutter Widgets, Material Design, Figma (Basic)     |
-| **Database**        | SQLite, Firebase (Realtime DB), PostgreSQL (Basic)  |
-| **Tools & IDEs**    | VS Code, Android Studio, GitHub                     |
-| **Other Roles**     | Project Management, Client Handling, Team Leading   |
+This GitHub space serves as a collection of all my **Mobile App Development (Flutter)** projects, assignments, and experiments completed during my studies at **COMSATS University Islamabad, Vehari Campus**.
 
----
+Each repository demonstrates key concepts related to:
+- Cross-platform app development  
+- Flutter widgets and layouts  
+- Dart programming fundamentals  
+- State management and navigation  
+- API integration and data handling  
 
-## 🚀 Projects & Experience
-
-- **Flutter Counter App**  
-  A simple stateful Flutter application demonstrating counter logic.
-
-- **iPhone-style Calculator**  
-  A front-end replica of the iOS calculator app using Flutter.
-
-- **Web Apps using Flask**  
-  Created multiple backend projects using Python Flask including RESTful APIs and admin dashboards.
-
-- **Client Projects at URSOFT**  
-  Handled UI/UX design and development for clients in education, retail, and services domains.
+The goal is to apply **modern app development practices** using Flutter and Dart, focusing on performance, design, and scalability.
 
 ---
 
-## 🎯 Career Goals
+## 🧩 Learning Focus
 
-- To become a full-stack developer proficient in both frontend (Flutter, UI/UX) and backend (Flask, APIs).
-- To scale URSOFT into a recognized name in Pakistan’s software industry.
-- To build mobile and web applications that solve real-world problems.
-
----
-
-## 📫 Contact
-
-- **Email**: [huzaifaihsan059@gmail.com]  
-- **GitHub**: [zaifi059] 
-- **Software House**: URSOFT 
+| Area | Description |
+|------|--------------|
+| 🧱 **Flutter Framework** | Cross-platform mobile UI toolkit |
+| 💡 **Dart Language** | Core logic, OOP principles, and async programming |
+| 🖥️ **UI/UX Design** | Material Design, theming, responsive layouts |
+| 🔄 **State Management** | Provider, setState, Riverpod, or BLoC |
+| 🌐 **API Integration** | RESTful APIs, JSON parsing |
+| 🧰 **Version Control** | Git and GitHub for collaboration |
 
 ---
 
-> _"Discipline, Dedication, and Development – the core values I follow in both academics and industry."_  
-> — Huzaifa Ihsan
+## 🏗️ Repository Structure
+
+Each Flutter project repository generally contains:
+
+```
+
+project_folder/
+├── lib/
+│   ├── main.dart
+│   ├── screens/
+│   ├── widgets/
+│   └── models/
+├── assets/
+│   ├── images/
+│   └── icons/
+├── pubspec.yaml
+└── README.md
+
+```
+
+---
+
+## 🚀 Objectives
+
+- To understand and apply **Flutter framework** for mobile app development.  
+- To build **beautiful and efficient cross-platform apps**.  
+- To explore **state management** and real-world data integration.  
+- To strengthen **problem-solving** and UI/UX design skills.  
+
+---
+
+## 🧑‍🎓 Student Details
+
+| Field | Information |
+|-------|--------------|
+| **Name** | Huzaifa Ihsan |
+| **Reg. No.** | FA22-BCS-057 |
+| **Program** | BS Computer Science |
+| **Semester** | 7th |
+| **University** | COMSATS University Islamabad, Vehari Campus |
+| **Course Instructor** | Sir Abrar Sadique |
+| **Email** | huzaifaihsan059@gmail.com |
+
+---
+
+## 💬 Acknowledgment
+
+I would like to express my sincere gratitude to **Sir Abrar Sadique** for his continuous guidance, mentorship, and encouragement throughout the Mobile App Development course.  
+His emphasis on best practices and real-world problem solving has greatly enhanced my development skills and understanding of the Flutter ecosystem.
+
+---
+
+<p align="center">✨ <b>Maintained by Huzaifa Ihsan — BSCS (7th Semester)</b> ✨</p>
+<p align="center"><i>COMSATS University Islamabad, Vehari Campus</i></p>
+```
+
+---
 
