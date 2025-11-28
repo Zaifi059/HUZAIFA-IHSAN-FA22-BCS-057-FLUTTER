@@ -1,100 +1,55 @@
+# BMI Calculator with Dynamic Pie Chart
 
-<h1 align="center">📱 Mobile App Development (Flutter) — COMSATS University Islamabad, Vehari Campus</h1>
+This repository contains a BMI (Body Mass Index) calculator with a visually appealing twist. Not only does it provide accurate BMI calculations, but it also features a dynamic loading animation and a pie chart that changes color based on the BMI value.
 
-<p align="center">
-  <b>Created and Maintained by:</b> <br>
-  <b>Huzaifa Ihsan</b> <br>
-  <b>Registration No:</b> FA22-BCS-057 <br>
-  <b>BS Computer Science — 7th Semester</b> <br>
-  <b>Instructor:</b> Sir Abrar Sadique <br>
-  <b>Course:</b> Mobile App Development (Flutter) <br>
-</p>
+# Accurate BMI Calculation:
+Obtain precise BMI calculations based on the height and weight you provide.
 
----
+# Engaging Loading Animation:
+Experience a seamless user journey with an interactive loading animation.
 
-## 🧠 About This Repository
+# Interactive Pie Chart:
+Visualize your BMI value through an interactive pie chart that offers a clear representation.
 
-This GitHub space serves as a collection of all my **Mobile App Development (Flutter)** projects, assignments, and experiments completed during my studies at **COMSATS University Islamabad, Vehari Campus**.
+# Color-Coded Segments:
+Witness color-coded segments of the pie chart dynamically changing colors as your BMI value adjusts.
 
-Each repository demonstrates key concepts related to:
-- Cross-platform app development  
-- Flutter widgets and layouts  
-- Dart programming fundamentals  
-- State management and navigation  
-- API integration and data handling  
+# Slider Blur Animation:
+Enjoy a visually pleasing experience with a subtle blur animation applied to the slider, enhancing the aesthetics of the interface.
 
-The goal is to apply **modern app development practices** using Flutter and Dart, focusing on performance, design, and scalability.
+### Usage:
+# Input Your Measurements:
+Enter your height and weight into the designated fields.
 
----
+# Calculate Your BMI:
+Click the "Calculate BMI" button to instantly generate your BMI value.
 
-## 🧩 Learning Focus
+# Experience the Loading Animation:
+While your BMI is being calculated, observe the dynamic loading animation that keeps you engaged.
 
-| Area | Description |
-|------|--------------|
-| 🧱 **Flutter Framework** | Cross-platform mobile UI toolkit |
-| 💡 **Dart Language** | Core logic, OOP principles, and async programming |
-| 🖥️ **UI/UX Design** | Material Design, theming, responsive layouts |
-| 🔄 **State Management** | Provider, setState, Riverpod, or BLoC |
-| 🌐 **API Integration** | RESTful APIs, JSON parsing |
-| 🧰 **Version Control** | Git and GitHub for collaboration |
+# Explore Your BMI Pie Chart:
+Once the calculation is complete, explore the pie chart that visually displays your BMI value in a user-friendly manner.
 
----
+# Appreciate the Slider's Visuals:
+Notice the subtle blur animation on the slider that adds a touch of elegance to your interaction.
 
-## 🏗️ Repository Structure
+# Discover your BMI with enhanced aesthetics, engaging features, and interactive visuals.
 
-Each Flutter project repository generally contains:
+#Contributing:
+Contributions are welcome! Feel free to fork this repository, make your improvements, and submit a pull request. Please follow the existing code style and guidelines.
 
-```
+# License:
+# This project is licensed under the MIT License.
 
-project_folder/
-├── lib/
-│   ├── main.dart
-│   ├── screens/
-│   ├── widgets/
-│   └── models/
-├── assets/
-│   ├── images/
-│   └── icons/
-├── pubspec.yaml
-└── README.md
+# DEMO
+# loading animation
+![pic1](https://github.com/Zaifi059/Bmi_Claculator_pie_chart/assets/125743722/07d1c2c7-5c97-41fa-b748-e06f13410bac)
+# Pie chart 
+# With visual effects
+![pic2](https://github.com/Zaifi059/Bmi_Claculator_pie_chart/assets/125743722/f3301188-55be-4c2f-a5cc-75340b04d46e)
+![pic3](https://github.com/Zaifi059/Bmi_Claculator_pie_chart/assets/125743722/d9441b0b-4adb-4909-bd67-a08772a092a6)
+![pic4](https://github.com/Zaifi059/Bmi_Claculator_pie_chart/assets/125743722/5cae13b7-11f1-4e77-b64c-4ebb9f86a605)
+# Blur feature
+![30cf311d-14b0-4a2b-b53f-d27369d3f5f5](https://github.com/Zaifi059/Bmi_Claculator_pie_chart/assets/125743722/d5903af6-9c81-480c-8ed4-c75526ce543a)
 
-```
-
----
-
-## 🚀 Objectives
-
-- To understand and apply **Flutter framework** for mobile app development.  
-- To build **beautiful and efficient cross-platform apps**.  
-- To explore **state management** and real-world data integration.  
-- To strengthen **problem-solving** and UI/UX design skills.  
-
----
-
-## 🧑‍🎓 Student Details
-
-| Field | Information |
-|-------|--------------|
-| **Name** | Huzaifa Ihsan |
-| **Reg. No.** | FA22-BCS-057 |
-| **Program** | BS Computer Science |
-| **Semester** | 7th |
-| **University** | COMSATS University Islamabad, Vehari Campus |
-| **Course Instructor** | Sir Abrar Sadique |
-| **Email** | huzaifaihsan059@gmail.com |
-
----
-
-## 💬 Acknowledgment
-
-I would like to express my sincere gratitude to **Sir Abrar Sadique** for his continuous guidance, mentorship, and encouragement throughout the Mobile App Development course.  
-His emphasis on best practices and real-world problem solving has greatly enhanced my development skills and understanding of the Flutter ecosystem.
-
----
-
-<p align="center">✨ <b>Maintained by Huzaifa Ihsan — BSCS (7th Semester)</b> ✨</p>
-<p align="center"><i>COMSATS University Islamabad, Vehari Campus</i></p>
-```
-
----
 
