@@ -1,6 +1,32 @@
-# Zaifi Weather App
+# **Assignment 3 – Zaifi Weather App (Flutter)**  
+**Course:** Mobile Application Development (Flutter)  
+**Submitted To:** *Sir Abrar Sadaique*  
+**Submitted By:** *Huzaifa Ihsan*  
+**Registration No:** *FA22-BCS-057*  
+**Department:** BS Computer Science  
+**Institute:** COMSATS University Islamabad, Vehari Campus  
 
-The Zaifi Weather App is a simple Flutter application that allows users to check the current temperature and view a forecast graph for the next three hours based on the OpenWeatherMap API
+---
+
+## **Project Title**
+### **Zaifi Weather App – A Flutter Weather Forecast Application**
+
+---
+
+## **Assignment Overview**
+
+This project is developed as **Assignment 3** for the Flutter course.  
+The purpose of this assignment is to demonstrate:
+
+- API Integration using Flutter  
+- State Management  
+- JSON Parsing  
+- UI Development  
+- Basic Knowledge of Flutter Widgets and Packages  
+
+The **Zaifi Weather App** provides real-time temperature updates and a short-term forecast using the **OpenWeatherMap API**.
+
+---
 
 # Demo
 
