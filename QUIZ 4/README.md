@@ -73,3 +73,7 @@ Supabase handles authentication, email verification, and user session management
 ---
 
 ## 📂 Project Structure
+
+<img width="249" height="519" alt="Screenshot from 2025-12-16 12-42-36" src="https://github.com/user-attachments/assets/a24a4813-9b6e-45c6-8ca3-94264b447080" />
+<img width="805" height="528" alt="Screenshot from 2025-12-16 12-49-12" src="https://github.com/user-attachments/assets/41a6eb0a-81be-4f30-9fa7-f73b9359c6c3" />
+
