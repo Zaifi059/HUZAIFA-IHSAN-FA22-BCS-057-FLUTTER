@@ -1,0 +1,38 @@
+name: form_submission_app
+description: A Flutter form app with Supabase
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  supabase_flutter: ^2.1.3
+  flutter_form_builder: '>=8.5.0 <10.2.0'
+  form_builder_validators: ^11.2.0
+  flutter_dotenv: ^5.1.0
+  iconsax: ^0.0.8   # Added for beautiful icons
+  google_fonts: ^6.1.0  # Added for custom fonts
+  shimmer: ^3.0.0  # Added for loading effects
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  
+  # Optional: Add fonts if using Google Fonts
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: fonts/Poppins-Regular.ttf
+        - asset: fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: fonts/Poppins-Bold.ttf
+          weight: 700
