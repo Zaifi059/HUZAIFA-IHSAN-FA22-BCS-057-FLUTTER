@@ -16,6 +16,20 @@
 
 ---
 ## screenshots
+---
+<img width="717" height="1600" alt="image" src="https://github.com/user-attachments/assets/8497e491-1425-4e9a-b7ac-b114ff6e4e15" />
+---
+<img width="717" height="1600" alt="image" src="https://github.com/user-attachments/assets/7b310911-4699-4323-876f-317cfa1f2e1c" />
+---
+<img width="717" height="1600" alt="image" src="https://github.com/user-attachments/assets/f27736a0-cb29-4982-ba57-aadac3c27762" />
+---
+<img width="717" height="1600" alt="image" src="https://github.com/user-attachments/assets/a2c168ec-6853-4e76-a108-0e3b223a0af6" />
+---
+<img width="717" height="1600" alt="image" src="https://github.com/user-attachments/assets/a235c2e9-facb-4a5f-88ce-e3d2759230db" />
+---
+<img width="717" height="1600" alt="image" src="https://github.com/user-attachments/assets/bc69dd35-5ced-4063-921f-3bf403219bb4" />
+---
+<img width="717" height="1600" alt="image" src="https://github.com/user-attachments/assets/9ca40ef1-bda1-4235-bb7d-e0878c98c52d" />
 
 ---
 ## 🌟 Features
