@@ -1,0 +1,456 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../services/notification_service.dart';
+
+/// Notification banner widget for displaying in-app alerts
+class NotificationBanner extends ConsumerWidget {
+  final AppNotification notification;
+  final VoidCallback? onDismiss;
+  final VoidCallback? onTap;
+
+  const NotificationBanner({
+    super.key,
+    required this.notification,
+    this.onDismiss,
+    this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Card(
+      margin: const EdgeInsets.all(8.0),
+      elevation: 4,
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.all(12.0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8.0),
+            color: _getBackgroundColor(notification.type),
+          ),
+          child: Row(
+            children: [
+              Icon(
+                _getIcon(notification.type),
+                color: _getIconColor(notification.type),
+                size: 24,
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      notification.title,
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: _getTextColor(notification.type),
+                          ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      notification.message,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                            color: _getTextColor(notification.type),
+                          ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      _formatTime(notification.createdAt),
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                            color: _getTextColor(notification.type)
+                                .withOpacity(0.7),
+                            fontSize: 10,
+                          ),
+                    ),
+                  ],
+                ),
+              ),
+              if (!notification.isRead)
+                Container(
+                  width: 8,
+                  height: 8,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                ),
+              const SizedBox(width: 8),
+              if (onDismiss != null)
+                IconButton(
+                  onPressed: onDismiss,
+                  icon: Icon(
+                    Icons.close,
+                    size: 18,
+                    color: _getTextColor(notification.type).withOpacity(0.7),
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Color _getBackgroundColor(NotificationType type) {
+    switch (type) {
+      case NotificationType.gameAssigned:
+        return Colors.blue.shade50;
+      case NotificationType.gameAccepted:
+        return Colors.green.shade50;
+      case NotificationType.gameDeclined:
+        return Colors.orange.shade50;
+      case NotificationType.checkInSuccess:
+        return Colors.green.shade50;
+      case NotificationType.payoutRequested:
+        return Colors.orange.shade50;
+      case NotificationType.payoutApproved:
+        return Colors.green.shade50;
+      case NotificationType.payoutComplete:
+        return Colors.purple.shade50;
+      case NotificationType.payoutFailed:
+        return Colors.red.shade50;
+      case NotificationType.systemMessage:
+        return Colors.grey.shade50;
+    }
+  }
+
+  Color _getIconColor(NotificationType type) {
+    switch (type) {
+      case NotificationType.gameAssigned:
+        return Colors.blue;
+      case NotificationType.gameAccepted:
+        return Colors.green;
+      case NotificationType.gameDeclined:
+        return Colors.orange;
+      case NotificationType.checkInSuccess:
+        return Colors.green;
+      case NotificationType.payoutRequested:
+        return Colors.orange;
+      case NotificationType.payoutApproved:
+        return Colors.green;
+      case NotificationType.payoutComplete:
+        return Colors.purple;
+      case NotificationType.payoutFailed:
+        return Colors.red;
+      case NotificationType.systemMessage:
+        return Colors.grey;
+    }
+  }
+
+  Color _getTextColor(NotificationType type) {
+    switch (type) {
+      case NotificationType.gameAssigned:
+        return Colors.blue.shade800;
+      case NotificationType.gameAccepted:
+        return Colors.green.shade800;
+      case NotificationType.gameDeclined:
+        return Colors.orange.shade800;
+      case NotificationType.checkInSuccess:
+        return Colors.green.shade800;
+      case NotificationType.payoutRequested:
+        return Colors.orange.shade800;
+      case NotificationType.payoutApproved:
+        return Colors.green.shade800;
+      case NotificationType.payoutComplete:
+        return Colors.purple.shade800;
+      case NotificationType.payoutFailed:
+        return Colors.red.shade800;
+      case NotificationType.systemMessage:
+        return Colors.grey.shade800;
+    }
+  }
+
+  IconData _getIcon(NotificationType type) {
+    switch (type) {
+      case NotificationType.gameAssigned:
+        return Icons.sports_basketball;
+      case NotificationType.gameAccepted:
+        return Icons.check_circle;
+      case NotificationType.gameDeclined:
+        return Icons.cancel;
+      case NotificationType.checkInSuccess:
+        return Icons.location_on;
+      case NotificationType.payoutRequested:
+        return Icons.request_page;
+      case NotificationType.payoutApproved:
+        return Icons.approval;
+      case NotificationType.payoutComplete:
+        return Icons.attach_money;
+      case NotificationType.payoutFailed:
+        return Icons.error;
+      case NotificationType.systemMessage:
+        return Icons.info;
+    }
+  }
+
+  String _formatTime(DateTime dateTime) {
+    final now = DateTime.now();
+    final difference = now.difference(dateTime);
+
+    if (difference.inMinutes < 1) {
+      return 'Just now';
+    } else if (difference.inMinutes < 60) {
+      return '${difference.inMinutes}m ago';
+    } else if (difference.inHours < 24) {
+      return '${difference.inHours}h ago';
+    } else {
+      return '${difference.inDays}d ago';
+    }
+  }
+}
+
+/// Toast notification widget for brief alerts
+class NotificationToast extends StatefulWidget {
+  final AppNotification notification;
+  final Duration duration;
+  final VoidCallback? onDismiss;
+
+  const NotificationToast({
+    super.key,
+    required this.notification,
+    this.duration = const Duration(seconds: 4),
+    this.onDismiss,
+  });
+
+  @override
+  State<NotificationToast> createState() => _NotificationToastState();
+}
+
+class _NotificationToastState extends State<NotificationToast>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+  late Animation<Offset> _slideAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      duration: const Duration(milliseconds: 300),
+      vsync: this,
+    );
+    _slideAnimation = Tween<Offset>(
+      begin: const Offset(0, -1),
+      end: Offset.zero,
+    ).animate(CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeOut,
+    ));
+
+    _animationController.forward();
+
+    // Auto dismiss after duration
+    Future.delayed(widget.duration, () {
+      if (mounted) {
+        _dismiss();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  void _dismiss() {
+    _animationController.reverse().then((_) {
+      if (widget.onDismiss != null) {
+        widget.onDismiss!();
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SlideTransition(
+      position: _slideAnimation,
+      child: Material(
+        elevation: 6,
+        borderRadius: BorderRadius.circular(8),
+        child: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            color: _getBackgroundColor(widget.notification.type),
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(
+              color: _getIconColor(widget.notification.type).withOpacity(0.3),
+              width: 1,
+            ),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                _getIcon(widget.notification.type),
+                color: _getIconColor(widget.notification.type),
+                size: 20,
+              ),
+              const SizedBox(width: 12),
+              Flexible(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      widget.notification.title,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: _getTextColor(widget.notification.type),
+                        fontSize: 14,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      widget.notification.message,
+                      style: TextStyle(
+                        color: _getTextColor(widget.notification.type),
+                        fontSize: 12,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 8),
+              GestureDetector(
+                onTap: _dismiss,
+                child: Icon(
+                  Icons.close,
+                  size: 16,
+                  color:
+                      _getTextColor(widget.notification.type).withOpacity(0.7),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Color _getBackgroundColor(NotificationType type) {
+    switch (type) {
+      case NotificationType.gameAssigned:
+        return Colors.blue.shade50;
+      case NotificationType.gameAccepted:
+        return Colors.green.shade50;
+      case NotificationType.gameDeclined:
+        return Colors.orange.shade50;
+      case NotificationType.checkInSuccess:
+        return Colors.green.shade50;
+      case NotificationType.payoutRequested:
+        return Colors.orange.shade50;
+      case NotificationType.payoutApproved:
+        return Colors.green.shade50;
+      case NotificationType.payoutComplete:
+        return Colors.purple.shade50;
+      case NotificationType.payoutFailed:
+        return Colors.red.shade50;
+      case NotificationType.systemMessage:
+        return Colors.grey.shade50;
+    }
+  }
+
+  Color _getIconColor(NotificationType type) {
+    switch (type) {
+      case NotificationType.gameAssigned:
+        return Colors.blue;
+      case NotificationType.gameAccepted:
+        return Colors.green;
+      case NotificationType.gameDeclined:
+        return Colors.orange;
+      case NotificationType.checkInSuccess:
+        return Colors.green;
+      case NotificationType.payoutRequested:
+        return Colors.orange;
+      case NotificationType.payoutApproved:
+        return Colors.green;
+      case NotificationType.payoutComplete:
+        return Colors.purple;
+      case NotificationType.payoutFailed:
+        return Colors.red;
+      case NotificationType.systemMessage:
+        return Colors.grey;
+    }
+  }
+
+  Color _getTextColor(NotificationType type) {
+    switch (type) {
+      case NotificationType.gameAssigned:
+        return Colors.blue.shade800;
+      case NotificationType.gameAccepted:
+        return Colors.green.shade800;
+      case NotificationType.gameDeclined:
+        return Colors.orange.shade800;
+      case NotificationType.checkInSuccess:
+        return Colors.green.shade800;
+      case NotificationType.payoutRequested:
+        return Colors.orange.shade800;
+      case NotificationType.payoutApproved:
+        return Colors.green.shade800;
+      case NotificationType.payoutComplete:
+        return Colors.purple.shade800;
+      case NotificationType.payoutFailed:
+        return Colors.red.shade800;
+      case NotificationType.systemMessage:
+        return Colors.grey.shade800;
+    }
+  }
+
+  IconData _getIcon(NotificationType type) {
+    switch (type) {
+      case NotificationType.gameAssigned:
+        return Icons.sports_basketball;
+      case NotificationType.gameAccepted:
+        return Icons.check_circle;
+      case NotificationType.gameDeclined:
+        return Icons.cancel;
+      case NotificationType.checkInSuccess:
+        return Icons.location_on;
+      case NotificationType.payoutRequested:
+        return Icons.request_page;
+      case NotificationType.payoutApproved:
+        return Icons.approval;
+      case NotificationType.payoutComplete:
+        return Icons.attach_money;
+      case NotificationType.payoutFailed:
+        return Icons.error;
+      case NotificationType.systemMessage:
+        return Icons.info;
+    }
+  }
+}
+
+/// Notification overlay manager for displaying toasts
+class NotificationOverlay {
+  static OverlayEntry? _currentEntry;
+
+  static void showToast(BuildContext context, AppNotification notification) {
+    // Remove existing toast if any
+    _currentEntry?.remove();
+
+    _currentEntry = OverlayEntry(
+      builder: (context) => Positioned(
+        top: MediaQuery.of(context).padding.top + 10,
+        left: 0,
+        right: 0,
+        child: NotificationToast(
+          notification: notification,
+          onDismiss: () {
+            _currentEntry?.remove();
+            _currentEntry = null;
+          },
+        ),
+      ),
+    );
+
+    Overlay.of(context).insert(_currentEntry!);
+  }
+
+  static void hideToast() {
+    _currentEntry?.remove();
+    _currentEntry = null;
+  }
+}
